@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NgRepeat">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-repeat turorial</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js">    </script>
+
+</head>
+<body ng-controller="NgRepeatController">
+    <div> Shopping list is</div>
+   <div > 
+    
+<br>
+<ul ng-repeat="items in shopList1 ">
+    <li>
+   {{items}}
+<button ng-click="removeItem($index)" >Remove items</button></li>
+</ul>
+<h1>Adding a elemt to list</h1>
+<input type="text" ng-model="newItem">
+<button ng-click="addItem()">Click to add</button>
+
+
+<h1>Searching an elemnt</h1>
+<input type="text" ng-model="search">
+<ul ng-repeat="items in shopList1 |filter:search ">
+    <li>
+   {{items}}</li>
+   </ul>
+
+
+</div>
+</body>
+</html>
